@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Solutions - India's Rural Healthcare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .image-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+        }
+        /* Interactive Tabs */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="bg-teal-900 text-white w-full shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-wider">AAROHA <span class="text-teal-400 font-light text-sm ml-2">| Insights</span></h1>
+            <a href="index.html" class="bg-teal-700 hover:bg-teal-600 px-4 py-2 rounded-lg font-semibold transition flex items-center gap-2">
+                <span>&larr;</span> Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Parallax Header -->
+    <header class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1593118944510-449e6f332a61?auto=format&fit=crop&w=1920&q=80" alt="Rural India" class="absolute inset-0 w-full h-full object-cover z-0 filter brightness-50">
+        <div class="relative z-10 text-center px-4" data-aos="zoom-in">
+            <span class="bg-teal-600 text-white px-4 py-1 rounded-full text-sm font-bold tracking-widest uppercase mb-4 inline-block">The Indian Context</span>
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">Tackling the Root Cause</h1>
+            <p class="text-xl text-slate-200 max-w-2xl mx-auto font-light">
+                Exploring the vast geographical and infrastructural challenges of India's remote villages, and the modern solutions designed to solve them.
+            </p>
+        </div>
+    </header>
+
+    <!-- Interactive Solutions Section -->
+    <section class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-teal-800 mb-4">Modern Solutions for Rural India</h2>
+            <p class="text-slate-600 max-w-3xl mx-auto">Click through the tabs below to see how technology and community mobilization are creating a robust healthcare ecosystem in areas where hospitals are out of reach.</p>
+        </div>
+
+        <!-- Tab Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="100">
+            <button onclick="openTab('tab1')" class="tab-btn bg-teal-600 text-white px-6 py-3 rounded-xl font-bold shadow-md hover:bg-teal-700 transition">Telemedicine Kiosks</button>
+            <button onclick="openTab('tab2')" class="tab-btn bg-slate-200 text-slate-700 px-6 py-3 rounded-xl font-bold shadow-md hover:bg-slate-300 transition">Mobile Medical Units</button>
+            <button onclick="openTab('tab3')" class="tab-btn bg-slate-200 text-slate-700 px-6 py-3 rounded-xl font-bold shadow-md hover:bg-slate-300 transition">ASHA / Volunteers</button>
+            <button onclick="openTab('tab4')" class="tab-btn bg-slate-200 text-slate-700 px-6 py-3 rounded-xl font-bold shadow-md hover:bg-slate-300 transition">Drone Deliveries</button>
+        </div>
+
+        <!-- Tab 1: Telemedicine -->
+        <div id="tab1" class="tab-content active bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="p-10 flex flex-col justify-center">
+                    <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-6">💻</div>
+                    <h3 class="text-3xl font-bold mb-4">Digital Health Centers</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">Villagers no longer need to travel 50km just to consult a doctor. Digital telemedicine kiosks equipped with basic diagnostic tools allow city-based specialists to treat patients remotely via high-speed internet.</p>
+                    <ul class="space-y-2 font-semibold text-teal-700">
+                        <li>✔️ Instant consultations</li>
+                        <li>✔️ Electronic prescriptions</li>
+                        <li>✔️ Cost-effective for patients</li>
+                    </ul>
+                </div>
+                <div class="h-64 md:h-auto relative">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173ff9e5eb3?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Doctor on screen">
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Mobile Units -->
+        <div id="tab2" class="tab-content bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="p-10 flex flex-col justify-center">
+                    <div class="bg-orange-100 text-orange-600 w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-6">🚑</div>
+                    <h3 class="text-3xl font-bold mb-4">Mobile Medical Units (MMUs)</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">Specially designed medical vans travel from village to village on scheduled routes. They act as moving mini-clinics equipped for maternal care, immunizations, and basic blood tests.</p>
+                    <ul class="space-y-2 font-semibold text-teal-700">
+                        <li>✔️ Overcomes bad road infrastructure</li>
+                        <li>✔️ Routine check-ups & vaccinations</li>
+                        <li>✔️ On-the-spot lab testing</li>
+                    </ul>
+                </div>
+                <div class="h-64 md:h-auto relative">
+                    <img src="https://images.unsplash.com/photo-1587556637409-7f970e5c9254?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Ambulance van">
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Volunteers -->
+        <div id="tab3" class="tab-content bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="p-10 flex flex-col justify-center">
+                    <div class="bg-green-100 text-green-600 w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-6">👩‍⚕️</div>
+                    <h3 class="text-3xl font-bold mb-4">ASHA & Local Volunteers</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">Empowering local women and youth with first-aid kits and emergency training. They act as the vital first responders during snake bites, heart attacks, or pregnancy complications before the ambulance arrives.</p>
+                    <ul class="space-y-2 font-semibold text-teal-700">
+                        <li>✔️ Zero response time</li>
+                        <li>✔️ Trusted by the community</li>
+                        <li>✔️ Bridges the gap in health awareness</li>
+                    </ul>
+                </div>
+                <div class="h-64 md:h-auto relative">
+                    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Health worker">
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 4: Drones -->
+        <div id="tab4" class="tab-content bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="p-10 flex flex-col justify-center">
+                    <div class="bg-purple-100 text-purple-600 w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-6">🚁</div>
+                    <h3 class="text-3xl font-bold mb-4">Drone Medicine Delivery</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">In hilly terrains or flood-prone areas where roads are completely blocked, medical drones are now being used to drop life-saving vaccines, anti-venom, and blood packets within minutes.</p>
+                    <ul class="space-y-2 font-semibold text-teal-700">
+                        <li>✔️ Bypasses traffic and broken roads</li>
+                        <li>✔️ Delivery in minutes, not hours</li>
+                        <li>✔️ Crucial for perishable supplies</li>
+                    </ul>
+                </div>
+                <div class="h-64 md:h-auto relative">
+                    <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Drone in sky">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JS for Interactive Tabs and Animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 50 });
+
+        function openTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            // Show the clicked tab
+            document.getElementById(tabId).classList.add('active');
+            
+            // Reset all buttons to gray
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-teal-600', 'text-white');
+                btn.classList.add('bg-slate-200', 'text-slate-700');
+            });
+            // Highlight the active button
+            event.currentTarget.classList.remove('bg-slate-200', 'text-slate-700');
+            event.currentTarget.classList.add('bg-teal-600', 'text-white');
+        }
+    </script>
+</body>
+</html>
