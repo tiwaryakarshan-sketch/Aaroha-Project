@@ -4,51 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AAROHA - Rural Healthcare Emergency</title>
-    <!-- Using Tailwind CSS for modern, responsive design -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        /* Custom CSS for interactive 3D Flip Cards */
-        .perspective {
-            perspective: 1000px;
-        }
+        .perspective { perspective: 1000px; }
         .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
+            position: relative; width: 100%; height: 100%; text-align: center;
             transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
             transform-style: preserve-3d;
         }
-        /* Hover for desktop, 'flipped' class for mobile tap */
-        .group:hover .flip-card-inner, 
-        .flip-card-inner.flipped {
-            transform: rotateY(180deg);
-        }
+        .group:hover .flip-card-inner, .flip-card-inner.flipped { transform: rotateY(180deg); }
         .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            border-radius: 1rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            position: absolute; width: 100%; height: 100%;
+            -webkit-backface-visibility: hidden; backface-visibility: hidden;
+            border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
-        .flip-card-front {
-            background-color: #ffffff;
-            color: #1f2937;
-        }
+        .flip-card-front { background-color: #ffffff; color: #1f2937; }
         .flip-card-back {
-            background-color: #0d9488;
-            color: white;
-            transform: rotateY(180deg);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
+            background-color: #0d9488; color: white; transform: rotateY(180deg);
+            display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem;
         }
-        /* Smooth scrolling */
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
     </style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-800">
@@ -57,179 +34,239 @@
     <nav class="bg-teal-700 text-white fixed w-full z-50 top-0 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold tracking-wider">AAROHA</h1>
-            <div class="hidden md:flex space-x-6">
+            <div class="hidden md:flex space-x-6 text-sm font-semibold">
                 <a href="#about" class="hover:text-teal-200 transition">About</a>
                 <a href="#problems" class="hover:text-teal-200 transition">Problems</a>
-                <a href="#solution" class="hover:text-teal-200 transition">Our Solution</a>
+                <a href="#current-responses" class="hover:text-teal-200 transition">Current Responses</a>
+                <a href="#solution" class="hover:text-teal-200 transition">Solution</a>
+                <a href="#impact" class="hover:text-teal-200 transition">Impact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="pt-28 pb-20 px-4 text-center bg-gradient-to-b from-teal-50 to-slate-50">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-5xl md:text-6xl font-extrabold text-teal-800 mb-6 drop-shadow-sm">
+    <header class="pt-32 pb-20 px-4 text-center bg-gradient-to-b from-teal-50 to-slate-50 min-h-[80vh] flex flex-col justify-center items-center">
+        <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-5xl md:text-7xl font-extrabold text-teal-800 mb-6 drop-shadow-sm leading-tight">
                 RURAL HEALTHCARE EMERGENCY
             </h2>
-            <p class="text-xl md:text-2xl text-slate-600 mb-8 italic">
+            <p class="text-xl md:text-2xl text-slate-600 mb-10 italic font-medium">
                 "Every second counts when a life is at stake"
             </p>
-            <div class="inline-block bg-teal-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-teal-700 transition transform hover:-translate-y-1">
-                Discover AAROHA
-            </div>
+            <!-- THIS BUTTON LINKS TO THE NEW PAGE -->
+            <a href="discover.html" class="inline-block bg-teal-600 text-white px-10 py-4 rounded-full text-xl font-bold shadow-xl hover:bg-teal-700 hover:shadow-2xl transition transform hover:-translate-y-1">
+                Discover AAROHA ✨
+            </a>
         </div>
     </header>
 
     <!-- Meaning Section -->
-    <section id="about" class="py-16 px-4 bg-white">
-        <div class="max-w-5xl mx-auto text-center">
-            <h3 class="text-3xl font-bold mb-6 text-teal-700">What is AAROHA?</h3>
+    <section id="about" class="py-20 px-4 bg-white border-t border-slate-100">
+        <div class="max-w-5xl mx-auto text-center" data-aos="zoom-in">
+            <h3 class="text-4xl font-bold mb-10 text-teal-700">What is AAROHA?</h3>
             <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-xl">
-                <div class="p-6 bg-slate-50 rounded-xl shadow-sm border border-slate-100">
-                    <span class="font-bold text-teal-600">AROGYA</span> = Health, well-being, or freedom from illness
+                <div class="p-8 bg-slate-50 rounded-2xl shadow-md border border-slate-100 transform hover:scale-105 transition">
+                    <span class="font-extrabold text-teal-600 block text-2xl mb-2">AROGYA</span> 
+                    <span class="text-slate-600 text-lg">Health, well-being, or freedom from illness</span>
                 </div>
-                <div class="text-3xl font-bold text-teal-300">+</div>
-                <div class="p-6 bg-slate-50 rounded-xl shadow-sm border border-slate-100">
-                    <span class="font-bold text-teal-600">ASHA</span> = Hope
+                <div class="text-5xl font-bold text-teal-300 drop-shadow-sm">+</div>
+                <div class="p-8 bg-slate-50 rounded-2xl shadow-md border border-slate-100 transform hover:scale-105 transition">
+                    <span class="font-extrabold text-teal-600 block text-2xl mb-2">ASHA</span> 
+                    <span class="text-slate-600 text-lg">Hope</span>
                 </div>
             </div>
-            <p class="mt-8 text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                Rural healthcare emergencies occur when people need urgent medical help but face severe delays. AAROHA aims to bridge the rural healthcare gap by bringing timely medical support closer to those in need.
+            <p class="mt-10 text-slate-600 max-w-3xl mx-auto text-lg leading-relaxed">
+                Rural healthcare emergencies occur when people need urgent medical help but face severe delays due to poor roads, long distances, limited facilities, and slow ambulance services.
             </p>
         </div>
     </section>
 
     <!-- The Current Problems (Interactive Flip Cards) -->
-    <section id="problems" class="py-16 px-4 bg-slate-100">
+    <section id="problems" class="py-20 px-4 bg-slate-100">
         <div class="max-w-6xl mx-auto">
-            <h3 class="text-3xl font-bold text-center mb-12 text-slate-800">The Current Problems</h3>
+            <h3 class="text-4xl font-bold text-center mb-4 text-slate-800" data-aos="fade-up">Barriers to Timely Medical Care</h3>
+            <p class="text-center text-slate-500 mb-12" data-aos="fade-up" data-aos-delay="100">Tap or hover on the cards to explore the issues</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                 <!-- Card 1 -->
-                <div class="group perspective h-64 cursor-pointer flip-container">
+                <div class="group perspective h-64 cursor-pointer flip-container" data-aos="flip-left" data-aos-delay="100">
                     <div class="flip-card-inner">
-                        <div class="flip-card-front flex flex-col items-center justify-center p-6 border-t-4 border-red-500">
-                            <img src="https://images.unsplash.com/photo-1587556637409-7f970e5c9254?auto=format&fit=crop&w=150&q=80" alt="Ambulance" class="w-20 h-20 rounded-full mb-4 object-cover">
-                            <h4 class="text-xl font-bold">Delayed Response</h4>
-                            <p class="text-sm text-slate-500 mt-2">(Tap to reveal)</p>
+                        <div class="flip-card-front flex flex-col items-center justify-center p-4 border-t-4 border-red-500">
+                            <h4 class="text-lg font-bold">Delayed Ambulance</h4>
                         </div>
-                        <div class="flip-card-back bg-red-600">
-                            <h4 class="text-xl font-bold mb-2">Ambulance Delays</h4>
-                            <p class="text-center">Due to poor road infrastructure and long distances, emergency vehicles often arrive too late.</p>
-                        </div>
+                        <div class="flip-card-back bg-red-500"><p class="text-sm font-semibold">Poor roads and long distances cause fatal delays.</p></div>
                     </div>
                 </div>
-
                 <!-- Card 2 -->
-                <div class="group perspective h-64 cursor-pointer flip-container">
+                <div class="group perspective h-64 cursor-pointer flip-container" data-aos="flip-left" data-aos-delay="200">
                     <div class="flip-card-inner">
-                        <div class="flip-card-front flex flex-col items-center justify-center p-6 border-t-4 border-orange-500">
-                            <img src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&w=150&q=80" alt="Phone" class="w-20 h-20 rounded-full mb-4 object-cover">
-                            <h4 class="text-xl font-bold">Multiple Numbers</h4>
-                            <p class="text-sm text-slate-500 mt-2">(Tap to reveal)</p>
+                        <div class="flip-card-front flex flex-col items-center justify-center p-4 border-t-4 border-orange-500">
+                            <h4 class="text-lg font-bold">Multiple Numbers</h4>
                         </div>
-                        <div class="flip-card-back bg-orange-500">
-                            <h4 class="text-xl font-bold mb-2">Confusion</h4>
-                            <p class="text-center">Lack of a single unified emergency network leads to critical time wasted trying to find the right contact.</p>
-                        </div>
+                        <div class="flip-card-back bg-orange-500"><p class="text-sm font-semibold">Confusion during panics over which emergency number to call.</p></div>
                     </div>
                 </div>
-
                 <!-- Card 3 -->
-                <div class="group perspective h-64 cursor-pointer flip-container">
+                <div class="group perspective h-64 cursor-pointer flip-container" data-aos="flip-left" data-aos-delay="300">
                     <div class="flip-card-inner">
-                        <div class="flip-card-front flex flex-col items-center justify-center p-6 border-t-4 border-yellow-500">
-                            <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=150&q=80" alt="Hospital" class="w-20 h-20 rounded-full mb-4 object-cover">
-                            <h4 class="text-xl font-bold">Long Distances</h4>
-                            <p class="text-sm text-slate-500 mt-2">(Tap to reveal)</p>
+                        <div class="flip-card-front flex flex-col items-center justify-center p-4 border-t-4 border-yellow-500">
+                            <h4 class="text-lg font-bold">Lack of Awareness</h4>
                         </div>
-                        <div class="flip-card-back bg-yellow-600">
-                            <h4 class="text-xl font-bold mb-2">Distant Hospitals</h4>
-                            <p class="text-center">Major hospitals are situated far from rural centers, making timely intervention nearly impossible.</p>
-                        </div>
+                        <div class="flip-card-back bg-yellow-500"><p class="text-sm font-semibold">Limited knowledge of basic first-aid techniques.</p></div>
                     </div>
                 </div>
-
                 <!-- Card 4 -->
-                <div class="group perspective h-64 cursor-pointer flip-container">
+                <div class="group perspective h-64 cursor-pointer flip-container" data-aos="flip-left" data-aos-delay="400">
                     <div class="flip-card-inner">
-                        <div class="flip-card-front flex flex-col items-center justify-center p-6 border-t-4 border-blue-500">
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=150&q=80" alt="Awareness" class="w-20 h-20 rounded-full mb-4 object-cover">
-                            <h4 class="text-xl font-bold">Lack of Awareness</h4>
-                            <p class="text-sm text-slate-500 mt-2">(Tap to reveal)</p>
+                        <div class="flip-card-front flex flex-col items-center justify-center p-4 border-t-4 border-blue-500">
+                            <h4 class="text-lg font-bold">Long Distances</h4>
                         </div>
-                        <div class="flip-card-back bg-blue-600">
-                            <h4 class="text-xl font-bold mb-2">First-Aid Knowledge</h4>
-                            <p class="text-center">Locals often lack basic first-aid training, turning to unprofessional help in critical moments.</p>
-                        </div>
+                        <div class="flip-card-back bg-blue-500"><p class="text-sm font-semibold">Hospitals are located far away from rural centers.</p></div>
                     </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="group perspective h-64 cursor-pointer flip-container" data-aos="flip-left" data-aos-delay="500">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front flex flex-col items-center justify-center p-4 border-t-4 border-purple-500">
+                            <h4 class="text-lg font-bold">Limited Support</h4>
+                        </div>
+                        <div class="flip-card-back bg-purple-500"><p class="text-sm font-semibold">Lack of advanced medical equipment and professionals.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: How Rural Areas Tackle This Problem -->
+    <section id="current-responses" class="py-20 px-4 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-3xl font-bold text-center mb-12 text-teal-800" data-aos="fade-up">Existing Community-Based Responses</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-red-50 p-6 rounded-xl shadow-sm border border-red-100" data-aos="fade-up" data-aos-delay="100">
+                    <span class="text-3xl mb-3 block">🚜</span>
+                    <h4 class="font-bold text-slate-800 mb-2">Dependence on other vehicles</h4>
+                    <p class="text-sm text-slate-600">Relying on tractors or personal vehicles unfit for medical transport.</p>
+                </div>
+                <div class="bg-red-50 p-6 rounded-xl shadow-sm border border-red-100" data-aos="fade-up" data-aos-delay="200">
+                    <span class="text-3xl mb-3 block">👨‍👩‍👧</span>
+                    <h4 class="font-bold text-slate-800 mb-2">Asking family & neighbours</h4>
+                    <p class="text-sm text-slate-600">Losing critical time seeking help from untrained locals.</p>
+                </div>
+                <div class="bg-red-50 p-6 rounded-xl shadow-sm border border-red-100" data-aos="fade-up" data-aos-delay="300">
+                    <span class="text-3xl mb-3 block">❌</span>
+                    <h4 class="font-bold text-slate-800 mb-2">Unprofessional advice</h4>
+                    <p class="text-sm text-slate-600">Seeking help from unqualified quacks or traditional healers.</p>
+                </div>
+                <div class="bg-red-50 p-6 rounded-xl shadow-sm border border-red-100" data-aos="fade-up" data-aos-delay="400">
+                    <span class="text-3xl mb-3 block">⚠️</span>
+                    <h4 class="font-bold text-slate-800 mb-2">Ignore symptoms</h4>
+                    <p class="text-sm text-slate-600">Brushing off early warning signs due to lack of accessibility.</p>
+                </div>
+                <div class="bg-red-50 p-6 rounded-xl shadow-sm border border-red-100 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="500">
+                    <span class="text-3xl mb-3 block">💊</span>
+                    <h4 class="font-bold text-slate-800 mb-2">Unprescribed medication</h4>
+                    <p class="text-sm text-slate-600">Taking over-the-counter drugs without a proper diagnosis.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Our Solution Section -->
-    <section id="solution" class="py-16 px-4 bg-white">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-3xl font-bold text-center mb-12 text-teal-700">Bridging the Gap: Our Proposed Solution</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="space-y-6">
+    <section id="solution" class="py-20 px-4 bg-teal-800 text-white">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-4xl font-bold text-center mb-16 text-teal-100" data-aos="fade-down">Bridging the Rural Healthcare Gap</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8" data-aos="fade-right">
                     <div class="flex items-start">
-                        <div class="bg-teal-100 text-teal-700 p-3 rounded-lg mr-4">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
-                        </div>
+                        <div class="bg-teal-600 p-4 rounded-full mr-6 shadow-lg">💊</div>
                         <div>
-                            <h4 class="text-xl font-bold">First-Aid Training & Health Camps</h4>
-                            <p class="text-slate-600">Empowering the community with vital skills and awareness to handle immediate emergencies before help arrives.</p>
+                            <h4 class="text-2xl font-bold mb-2">First-Aid Training & Camps</h4>
+                            <p class="text-teal-200">Equipping locals with critical life-saving skills.</p>
                         </div>
                     </div>
                     <div class="flex items-start">
-                        <div class="bg-teal-100 text-teal-700 p-3 rounded-lg mr-4">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </div>
+                        <div class="bg-teal-600 p-4 rounded-full mr-6 shadow-lg">🤝</div>
                         <div>
-                            <h4 class="text-xl font-bold">Local Emergency Volunteers</h4>
-                            <p class="text-slate-600">Replacing dependence on unequipped neighbors with trained, dedicated local response units.</p>
+                            <h4 class="text-2xl font-bold mb-2">Local Emergency Volunteers</h4>
+                            <p class="text-teal-200">Trained community members ready to act immediately.</p>
                         </div>
                     </div>
                     <div class="flex items-start">
-                        <div class="bg-teal-100 text-teal-700 p-3 rounded-lg mr-4">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                        </div>
+                        <div class="bg-teal-600 p-4 rounded-full mr-6 shadow-lg">📱</div>
                         <div>
-                            <h4 class="text-xl font-bold">Telemedicine & Consultations</h4>
-                            <p class="text-slate-600">Connecting remote patients instantly with professional doctors through digital channels.</p>
+                            <h4 class="text-2xl font-bold mb-2">Telemedicine Consultations</h4>
+                            <p class="text-teal-200">Digital access to certified doctors in real-time.</p>
                         </div>
                     </div>
                 </div>
-                <div class="rounded-xl overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=800&q=80" alt="Medical professional" class="w-full h-auto object-cover transform hover:scale-105 transition duration-500">
+                <div class="rounded-2xl overflow-hidden shadow-2xl" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=800&q=80" alt="Medical professional" class="w-full h-auto object-cover transform hover:scale-105 transition duration-700">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- NEW SECTION: Before and After -->
+    <section id="impact" class="py-20 px-4 bg-slate-50">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-4xl font-bold text-center mb-16 text-slate-800" data-aos="zoom-in">The AAROHA Impact</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Before -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-8 border-red-500" data-aos="fade-right">
+                    <h4 class="text-3xl font-extrabold text-red-600 mb-6 border-b pb-4">BEFORE</h4>
+                    <ul class="space-y-4 text-slate-600">
+                        <li class="flex items-center"><span class="text-red-500 mr-3">❌</span> Delayed ambulance response</li>
+                        <li class="flex items-center"><span class="text-red-500 mr-3">❌</span> Long distance to hospitals</li>
+                        <li class="flex items-center"><span class="text-red-500 mr-3">❌</span> Limited medical support</li>
+                        <li class="flex items-center"><span class="text-red-500 mr-3">❌</span> Lack of emergency awareness</li>
+                        <li class="flex items-center"><span class="text-red-500 mr-3">❌</span> Dependence on family/neighbours</li>
+                        <li class="flex items-center"><span class="text-red-500 mr-3">❌</span> Unprofessional medical advice</li>
+                    </ul>
+                </div>
+                <!-- After -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-8 border-teal-500" data-aos="fade-left">
+                    <h4 class="text-3xl font-extrabold text-teal-600 mb-6 border-b pb-4">AFTER</h4>
+                    <ul class="space-y-4 text-slate-600">
+                        <li class="flex items-center"><span class="text-teal-500 mr-3">✅</span> Faster emergency response via volunteers</li>
+                        <li class="flex items-center"><span class="text-teal-500 mr-3">✅</span> Better doctor access through telemedicine</li>
+                        <li class="flex items-center"><span class="text-teal-500 mr-3">✅</span> First-aid trained community members</li>
+                        <li class="flex items-center"><span class="text-teal-500 mr-3">✅</span> Health awareness & training</li>
+                        <li class="flex items-center"><span class="text-teal-500 mr-3">✅</span> Stronger community support system</li>
+                        <li class="flex items-center"><span class="text-teal-500 mr-3">✅</span> Earlier attention and safer outcomes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Conclusion -->
+    <section class="py-20 px-4 bg-white border-t border-slate-200">
+        <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in-up">
+            <h3 class="text-3xl font-bold mb-6 text-teal-800">Conclusion</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                AAROHA aims to bridge the rural healthcare gap by bringing timely medical support closer to communities. Through emergency response, first-aid training, telemedicine, health awareness, and local volunteers, it can help rural people receive the right care at the right time.
+            </p>
+            <blockquote class="text-2xl md:text-3xl font-bold italic text-teal-600 border-l-4 border-teal-500 pl-6 py-2 mx-auto inline-block bg-teal-50 pr-8 rounded-r-xl">
+                "Because every life deserves timely care, no matter where they live”
+            </blockquote>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="bg-slate-900 text-white py-8 text-center">
-        <h2 class="text-2xl font-bold mb-4 tracking-widest text-teal-400">AAROHA</h2>
-        <p class="text-slate-400 max-w-md mx-auto mb-4">Bridging the rural healthcare gap by bringing timely medical support closer to you.</p>
-        <p class="text-sm text-slate-500">© 2026 AAROHA Project. All rights reserved.</p>
+    <footer class="bg-slate-900 text-white py-10 text-center">
+        <h2 class="text-3xl font-bold mb-4 tracking-widest text-teal-400">AAROHA</h2>
+        <p class="text-sm text-slate-500 mt-6">© 2026 AAROHA Project. Every second counts.</p>
     </footer>
 
-    <!-- Interactive Script for Mobile Tapping -->
+    <!-- AOS JS and Custom Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Select all flip containers
+        AOS.init({ once: true, offset: 100 });
         const flipContainers = document.querySelectorAll('.flip-container');
-
         flipContainers.forEach(container => {
             container.addEventListener('click', function() {
-                // Find the inner card element
                 const innerCard = this.querySelector('.flip-card-inner');
-                
-                // Toggle the 'flipped' class for touch devices
                 innerCard.classList.toggle('flipped');
-                
-                // Remove flipped class from other cards to keep the UI clean
                 flipContainers.forEach(otherContainer => {
                     if (otherContainer !== this) {
                         otherContainer.querySelector('.flip-card-inner').classList.remove('flipped');
